@@ -3,39 +3,26 @@
 @tailwind utilities;
 
 :root {
-  direction: rtl;
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
 }
-body{
-  overflow-x: hidden;
-  font-family: "Cairo", serif;
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
 }
-@layer components {
-  .section {
-    @apply py-20;
+
+@keyframes progress {
+  from {
+    width: 100%;
   }
-
-  .container {
-    @apply w-full max-w-7xl mx-auto px-8 md:px-4;
+  to {
+    width: 0%;
   }
 }
 
-/* Slider Styles */
-.slick-dots {
-  bottom: -40px;
-}
-
-.slick-dots li button:before {
-  color: #FFD700 !important;
-  opacity: 0.5;
-}
-
-.slick-dots li.slick-active button:before {
-  color: #FFD700 !important;
-  opacity: 1;
-}
-
-.bg{
-  background-image: url(../public/bg2.png);
-  background-position: center;
-  background-size: cover;
+.animate-progress {
+  animation: progress 3s linear forwards;
 }

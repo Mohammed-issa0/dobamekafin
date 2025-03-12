@@ -1,24 +1,24 @@
-import Hero from './components/Hero';
-import Features from './components/Features';
-import Benefits from './components/Benefits';
-import Specifications from './components/Specifications';
-import Testimonials from './components/Testimonials';
-import Pricing from './components/Pricing';
-import FAQ from './components/FAQ';
-import CallToAction from './components/CallToAction';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { CartProvider } from './context/CartContext';
+import Navbar from './components/Navbar';
+import Home from './components/Home';
+import Shop from './components/Shop';
+import Cart from './components/Cart';
 
 function App() {
   return (
-    <div className="" dir="rtl">
-      <Hero />
-      <Features />
-      <Benefits />
-      {/* <Specifications /> */}
-      <Testimonials />
-      <Pricing />
-      <FAQ />
-      <CallToAction />
-    </div>
+    <CartProvider>
+      <Router>
+        <div className="min-h-screen bg-gray-50">
+          <Navbar />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/shop" element={<Shop />} />
+            <Route path="/cart" element={<Cart />} />
+          </Routes>
+        </div>
+      </Router>
+    </CartProvider>
   );
 }
 
