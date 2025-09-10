@@ -65,7 +65,7 @@ export default function FAQ() {
                   className="font-semibold text-lg text-black drop-shadow-sm transition"
                 >
                   {faq.question}
-                </motion.span>
+                </motion.span >
                 {openIndex === index ? (
                   <ChevronUp className="h-5 w-5 text-black drop-shadow-sm transition" />
                 ) : (
